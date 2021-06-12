@@ -23,10 +23,12 @@
     "passport-kakao": "^1.0.1",
     "passport-local-mongoose": "^6.1.0",
     "passport-naver": "^1.0.6",
+    "regenerator-runtime": "^0.13.7",
     "s3-zip": "^3.2.0"
   },
   "scripts": {
-    "start": "babel-node src/init.js",
+    "build": "babel src -d build",
+    "start": "node build/init.js",
     "dev": "nodemon --exec babel-node src/init.js"
   },
   "devDependencies": {
