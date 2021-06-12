@@ -13,9 +13,6 @@ const UPLOAD = "/upload";
 const DOWNLOAD_IMAGE = "/download";
 const DELETE_IMAGE = "/delete"; //여러개 선택해야하니까 배열이어야..??
 
-// Github
-const GITHUB = "/auth/github";
-const GITHUB_CALLBACK = "/auth/github/callback";
 
 // Naver
 const NAVER = "/auth/naver";
@@ -37,8 +34,6 @@ const routes = {
   upload: UPLOAD,
   downloadImage: DOWNLOAD_IMAGE,
   deleteImage: DELETE_IMAGE,
-  gitHub: GITHUB,
-  githubCallback: GITHUB_CALLBACK,
   naver: NAVER,
   naverCallback: NAVER_CALLBACK,
   kakao: KAKAO,
