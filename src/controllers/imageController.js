@@ -13,7 +13,7 @@ const findDBImage = async(name) =>{
 
 export const home = (req, res) => {
 
-  return res.sendFile(path.join(`${__dirname}/../views/index.html`));
+  return res.sendFile(path.join(`${__dirname}/../../src/views/index.html`));
 
 };
 
