@@ -4,42 +4,6 @@ import User from "../models/User";
 
 export const login = (req, res) => res.send("Login");
 
-export const githubLogin = passport.authenticate("github");
-
-export const githubLoginCallback = async (
-  accessToken,
-  refreshToken,
-  profile,
-  cb
-) => {
-  //console.log(accessToken, refreshToken, profile, cb);
-
-  const {
-    _json: { id, name, email },
-  } = profile;
-
-  try {
-    const user = await User.findOne({ auth_id: id });
-
-    if (user) {
-      user.auth_id = id;
-      user.save();
-      console.log("Old User --Github Login");
-      return cb(null, user);
-    }
-    const newUser = await User.create({
-      email,
-      name,
-      auth_id: id,
-      auth_type: "github",
-    });
-    console.log("New User --Github Login");
-    return cb(null, newUser);
-  } catch (error) {
-    return cb(error);
-  }
-};
-
 export const naverLogin = passport.authenticate("naver");
 
 export const naverLoginCallback = async (
