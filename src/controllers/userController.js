@@ -77,7 +77,7 @@ export const kakaoLoginCallback = async (
 };
 
 export const postLogIn = (req, res) => {
-  //res.redirect("http://localhost:3000");
+  res.redirect(routes.home);
 };
 
 export const logout = (req, res) => {
