@@ -45,12 +45,11 @@ export const upload = async (req, res) => {
 };
 
 export const downloadImage = (req, res) => {
-  //const region = "ap-northeast-2";
   const bucket = "project-annotation";
   const folder =  "test/origin/";
-  const file1 = "dal.jpg";
-  const file2 = "dal2.jpg";
-  const file3 = "go.jpg";
+  const file1 = "dal.png";
+  const file2 = "dal2.png";
+  const file3 = "go.png";
   
   res.set('content-type', 'application/zip')
 
@@ -69,7 +68,8 @@ const deleteDB = async (objects) =>{
 export const deleteImage = async (req, res) => {
   const objects = [//프론트에서 줘야 할 오브젝트
     { Key: 'dal.png' },
-    { Key: 'dal2.png' }]
+    { Key: 'dal2.png' },
+     {Key: 'go.png'}]
     
   await deleteDB(objects);
   s3.deleteObjects({
